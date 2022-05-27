@@ -62,10 +62,10 @@ namespace Factory.Controllers
     {
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
-      {
-        _db.MachineEngineers.Add( new MachineEngineer(){MachineId = MachineId ,EngineerId = engineer.EngineerId});
-        _db.SaveChanges();
-      }
+      // {
+      //   _db.MachineEngineers.Add( new MachineEngineer(){MachineId = MachineId ,EngineerId = engineer.EngineerId});
+      //   _db.SaveChanges();
+      // }
       return RedirectToAction("Index");
     }
 
