@@ -11,6 +11,8 @@
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
+
+  <input class="myCssClass" type="submit" value="Save" />
 }
 </br>
 <p>@Html.ActionLink("Back to machines", "Index", null, null,  new {@class = "myCssClass"})</p>

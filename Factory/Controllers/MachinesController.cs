@@ -20,11 +20,6 @@ namespace Factory.Controllers
     {
       return View(_db.Machines.ToList());
     }
-    public ActionResult Search()
-    {
-      return View();
-    }
-
     public ActionResult Create()
     {
       return View();
@@ -74,6 +69,12 @@ namespace Factory.Controllers
       _db.Machines.Remove(thisMachine);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+    public ActionResult AddEngineer(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
     }
     [HttpPost]
     public ActionResult AddEngineer(Machine machine, int EngineerId)

@@ -1,14 +1,12 @@
 @model Factory.Models.Machine;
 
-
-<hr />
-<h2>Add Engineer</h2>
-<h3>Assign an engineer to this machine</h3>
+<h3>Assign an engineer to this machine: @Html.DisplayFor(model => model.Name)</h3>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
   @Html.Label("Select an engineer")
   @Html.DropDownList("EngineerId")
-  <button type="submit" value="Add Engineer" class="btn btn-primary">Add</button>
-}
+  <input class="myCssClass" type="submit" value="Save" />
+} 
+@Html.ActionLink("Back to List", "Index", null, null , new {@class="myCssClass"})
