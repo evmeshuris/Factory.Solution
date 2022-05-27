@@ -16318,11 +16318,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Machines/Search.cshtml",
-      "TargetPath": "Views\\Machines\\Search.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Machines/Index.cshtml",
       "TargetPath": "Views\\Machines\\Index.cshtml",
       "FileKind": "mvc"

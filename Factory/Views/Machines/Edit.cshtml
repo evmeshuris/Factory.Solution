@@ -1,0 +1,16 @@
+@model Factory.Models.Machine
+
+<h4>Update machine's information: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.EditorFor(model => model.Description)
+}
+</br>
+<p>@Html.ActionLink("Back to machines", "Index", null, null,  new {@class = "myCssClass"})</p>
