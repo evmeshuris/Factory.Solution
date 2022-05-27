@@ -62,10 +62,10 @@ namespace Factory.Controllers
     {
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
-      // {
-      //   _db.MachineEngineers.Add( new MachineEngineer(){MachineId = MachineId ,EngineerId = engineer.EngineerId});
-      //   _db.SaveChanges();
-      // }
+      {
+        // _db.MachineEngineers.Add( new MachineEngineer(){MachineId = MachineId ,EngineerId = engineer.EngineerId});
+        // _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
 
@@ -129,14 +129,15 @@ namespace Factory.Controllers
       return RedirectToAction("Details", new { id = engineer.EngineerId });
     }
 
-    [HttpPost]
-    public ActionResult DeleteMachine(int joinId, int engineerId)
-    {
-      var joinEntry = _db.MachineEngineers.FirstOrDefault(joinEntry => joinEntry.MachineEngineerId == joinId);
-      _db.MachineEngineers.Remove(joinEntry);
-      _db.SaveChanges();
-      return RedirectToAction("Details", new { id = engineerId });
-    }
+    //TODO: remove machine from engineer
+    // [HttpPost]
+    // public ActionResult DeleteMachine(int joinId, int engineerId)
+    // {
+    //   var joinEntry = _db.MachineEngineers.FirstOrDefault(joinEntry => joinEntry.MachineEngineerId == joinId);
+    //   _db.MachineEngineers.Remove(joinEntry);
+    //   _db.SaveChanges();
+    //   return RedirectToAction("Details", new { id = engineerId });
+    // }
     
   }
 }
