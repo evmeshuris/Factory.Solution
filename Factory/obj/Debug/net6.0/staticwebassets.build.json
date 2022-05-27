@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "VwfEFSUib7LvCzABfhAMOG26uG3dgj2c2ywuICOA9gY=",
+  "Source": "Factory",
+  "BasePath": "_content/Factory",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Factory/wwwroot",
+      "Source": "Factory",
+      "ContentRoot": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/wwwroot/",
+      "BasePath": "_content/Factory",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/wwwroot/css/styles.css",
+      "SourceId": "Factory",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/wwwroot/",
+      "BasePath": "_content/Factory",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/styles.css"
+    }
+  ]
+}
