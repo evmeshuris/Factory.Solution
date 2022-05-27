@@ -16358,6 +16358,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Engineers/AddMachine.cshtml",
+      "TargetPath": "Views\\Engineers\\AddMachine.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Engineers/Edit.cshtml",
       "TargetPath": "Views\\Engineers\\Edit.cshtml",
       "FileKind": "mvc"

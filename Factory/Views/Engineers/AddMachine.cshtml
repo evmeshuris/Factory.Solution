@@ -1,0 +1,15 @@
+@model Factory.Models.Engineer;
+
+<h2>Machine Factory Database</h2>
+<hr />
+@* <h3>Add a New Machine</h3> *@
+<h4>Choose a machine @Html.DisplayFor(model => model.Name) will work on</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+  @Html.Label("Select a machine")
+  @Html.DropDownList("MachineId")
+  <button type="submit" value="Add Machine" class="myCssClass">Add</button>
+}
+@Html.ActionLink("Back to List", "Index", null, null , new {@class="myCssClass"})  

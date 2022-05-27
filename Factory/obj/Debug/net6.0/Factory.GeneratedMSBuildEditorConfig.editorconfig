@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Engineers/AddMachine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5naW5lZXJzL0FkZE1hY2hpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/evgeniya/Desktop/epicodus/week11/Factory.Solution/Factory/Views/Engineers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5naW5lZXJzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
