@@ -2,11 +2,11 @@
 @model List<Factory.Models.Engineer>;
 
 <h2>Engineers</h2>
-
-@foreach (Engineer engineer in Model)
+<ul>
+@foreach (var engineer in Model)
 {
     <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
 }
-</br>
+</ul>
 <p>@Html.ActionLink("Add new engineer", "Create", null, null, new { @class = "myCssClass" })</p>
 <p>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "myCssClass" })</p>

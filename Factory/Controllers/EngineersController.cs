@@ -18,6 +18,37 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
+      //TODO: show machines licensed for engineer
+      // var licensed_engineers = _db.Engineers
+      //   .Join(_db.MachineEngineer, e => e.EngineerId, me => me.EngineerId, (e, me)
+      //     => new {
+      //       e.EngineerId, 
+      //       me.MachineId,
+      //       e.Name,
+      //     })
+      //   .Join(_db.Machines, e_me => e_me.MachineId, m => m.MachineId, (e_me, m)
+      //     => new {
+      //       e_me.EngineerId,
+      //       e_me.MachineId,
+      //       EngineerName = e_me.Name,
+      //       MachineName = m.Name,
+      //       m.Description
+      //     })
+      //     .ToList();
+
+      // var all_eng = 
+      //   from eng in _db.Engineers
+      //   join l_eng in licensed_engineers on eng.EngineerId equals l_eng.EngineerId into gj
+      //   from s_eng in gj.DefaultIfEmpty()
+      //   select new {
+      //     eng.EngineerId,
+      //     s_eng.MachineId,
+      //     EngineerName = eng.Name,
+      //     s_eng.MachineName,
+      //     s_eng.Description
+      //   };
+
+      // return View(all_eng.ToList());
       return View(_db.Engineers.ToList());
     }
 
