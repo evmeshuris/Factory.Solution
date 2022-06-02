@@ -7,21 +7,16 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This enginner is not assinged to any machine</p>
+  <p>This engineer is not assinged to any machine</p>
 }
 else
 {
-  <h6>Machines this engeener assinged to:</h6>
+  <h6>Machines this engineer assinged to:</h6>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Machine.Name</li>
-    @using(Html.BeginForm("DeleteMachine", "Engineers"))
-    {
-      @Html.Hidden("joinId", @join.MachineEngineerId)
-      @* TODO: remove machine from engineer
-      <input class="myCssClass" type="submit" value="Delete"/> *@
-    }
+    @Html.ActionLink("Delete machine", "DeleteMachine", null, new { machineEngineerId = join.MachineEngineerId}, new {@class="myCssClass"})
   }
   </ul>
 }

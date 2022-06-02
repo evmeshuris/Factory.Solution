@@ -17,6 +17,8 @@
       @foreach (var join in Model.JoinEntities)
       {
         <li>@join.Engineer.Name</li>
+        
+        @Html.ActionLink("Delete Engineer", "DeleteEngineer", null, new { machineEngineerId = join.MachineEngineerId}, new {@class="myCssClass"})
       }
     </ul>
   }
