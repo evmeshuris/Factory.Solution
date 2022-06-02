@@ -86,13 +86,13 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = machine.MachineId });
     }
-    [HttpPost]
-    public ActionResult DeleteEngineer(int joinId, int machineId)
+    [HttpGet]
+    public ActionResult DeleteEngineer(int machineEngineerId)
     {
-      var joinEntry = _db.MachineEngineers.FirstOrDefault(joinEntry => joinEntry.MachineEngineerId == joinId);
+      var joinEntry = _db.MachineEngineers.FirstOrDefault(joinEntry => joinEntry.MachineEngineerId == machineEngineerId);
       _db.MachineEngineers.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Details", new { id = machineId });
+      return RedirectToAction("Details", new { id = joinEntry.MachineId });
     }
     
   }

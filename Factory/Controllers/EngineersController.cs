@@ -18,38 +18,12 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      //TODO: show machines licensed for engineer
-      // var licensed_engineers = _db.Engineers
-      //   .Join(_db.MachineEngineer, e => e.EngineerId, me => me.EngineerId, (e, me)
-      //     => new {
-      //       e.EngineerId, 
-      //       me.MachineId,
-      //       e.Name,
-      //     })
-      //   .Join(_db.Machines, e_me => e_me.MachineId, m => m.MachineId, (e_me, m)
-      //     => new {
-      //       e_me.EngineerId,
-      //       e_me.MachineId,
-      //       EngineerName = e_me.Name,
-      //       MachineName = m.Name,
-      //       m.Description
-      //     })
-      //     .ToList();
+      
+      var thisEngineers = _db.Engineers
+        .Include(engineer => engineer.JoinEntities)
+        .ThenInclude(join => join.Machine);
 
-      // var all_eng = 
-      //   from eng in _db.Engineers
-      //   join l_eng in licensed_engineers on eng.EngineerId equals l_eng.EngineerId into gj
-      //   from s_eng in gj.DefaultIfEmpty()
-      //   select new {
-      //     eng.EngineerId,
-      //     s_eng.MachineId,
-      //     EngineerName = eng.Name,
-      //     s_eng.MachineName,
-      //     s_eng.Description
-      //   };
-
-      // return View(all_eng.ToList());
-      return View(_db.Engineers.ToList());
+      return View(thisEngineers.ToList());
     }
 
     public ActionResult Create()
@@ -129,15 +103,14 @@ namespace Factory.Controllers
       return RedirectToAction("Details", new { id = engineer.EngineerId });
     }
 
-    //TODO: remove machine from engineer
-    // [HttpPost]
-    // public ActionResult DeleteMachine(int joinId, int engineerId)
-    // {
-    //   var joinEntry = _db.MachineEngineers.FirstOrDefault(joinEntry => joinEntry.MachineEngineerId == joinId);
-    //   _db.MachineEngineers.Remove(joinEntry);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Details", new { id = engineerId });
-    // }
+    [HttpGet]
+    public ActionResult DeleteMachine(int machineEngineerId)
+    {
+      var joinEntry = _db.MachineEngineers.Single(joinEntry => joinEntry.MachineEngineerId == machineEngineerId);
+      _db.MachineEngineers.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntry.EngineerId });
+    }
     
   }
 }
